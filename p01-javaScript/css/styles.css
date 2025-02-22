@@ -1,0 +1,35 @@
+.chapter {
+    box-shadow: 2px 2px 5px 0 gray;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-block: 30px;
+
+    font-family: 'Segoe UI';
+    padding-bottom: 10px;
+}
+
+.chapter > header {
+    font-size: 18px;
+    background-color: beige;
+    font-weight: bold;
+    padding: 5px;
+    box-shadow: 0px 2px 5px 0 gray; 
+    margin-bottom: 20px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.chapter > p {
+    padding: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+    color :blue;
+    font-size: 16px;
+}
+
+.chapter > p:hover {
+    background-color: beige;
+    font-weight: bold;
+    cursor: pointer;
+}

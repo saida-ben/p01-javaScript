@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>le Language JavaScript</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- SCript Externe-->
+     <script src="js/objects.js"></script>
+     <script src="js/arrays.js"></script>
+     <script src="js/basics.js"></script>
+    <!-- SCript Interne-->
+
+    <script>
+        /* une ou plusieurs instruction js*/
+        afficher("SCript Interne dans le head");
+        //console.log("Hello World");
+        //document.write("Hello World");
+        //prompt("Hello World");
+        //confirm("Hello World");
+    </script>
+    
+    
+    </head>
+<body onload="afficher('onload')"> <!--apres tout chargee --onload -->
+    <script>
+        afficher("Début body");
+    </script>    
+
+    <h1>le language JavaScript</h1>
+    <span id ="s01" onclick="afficher('Script Evenementiel')">Script Evenementiel</span>
+
+    <section class="chapter">
+        <header>Chapitre 1 : Introduction au language JavaScript</header>
+        <p onclick="exp01()">1.1 Types de base</p>
+        <p onclick="exp02()">1.2 Contexte globale et objet global window </p>
+        <p onclick="exp03()">1.3 type wrapper </p>
+        <p onclick="exp04()">1.4  Comparaison de variables et valeurs falcy/truthy </p>
+        <p onclick="exp05()">1.5  Conversion de types</p>
+    </section>
+
+    <section class="chapter">
+        <header>Chapitre 2 : les Tableaux</header>
+        <p onclick="arrays.exp01()">2.1 Création d'un tableau</p>
+        <p onclick="arrays.exp02()">2.2 le type Array</p>
+        <p onclick="arrays.exp03()">2.3 parcourir un Tableau</p>
+
+    </section>
+
+    <script>
+        afficher("Fin body");
+    </script>
+</body>
+</html>
