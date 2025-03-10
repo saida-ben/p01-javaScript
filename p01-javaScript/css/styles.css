@@ -33,3 +33,30 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.example {
+border : 1px dashed black; 
+    margin-left: auto;
+    margin-right: 20px;
+    width: 80%;
+    padding: 10px;
+    margin-block: 20px;
+}
+
+.data-table {
+    box-shadow: 2px 2px 5px 0 gray;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    font-family: 'Segoe UI';
+}
+.data-table th {
+    background-color: beige;
+    padding: 5px;
+    border: 1px solid black;
+}
+.data-table td {
+    padding: 5px;
+    border-top: 1px solid gainsboro;
+}

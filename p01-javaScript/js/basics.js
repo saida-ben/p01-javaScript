@@ -20,7 +20,14 @@ afficher("Script Externe");
 // les types de bases sont passes par valeur
 // les types objets sont passes par reference
 
-
+function falsyTruthy(name, value){
+    if(value){
+        console.log('-' +name + 'is true');
+    }
+    else {
+        console.log('-' +name + 'is false');
+    }
+}
 function afficher(message){
     //alert(message);
     console.log(message); //obj console et sa methode log 
@@ -30,7 +37,7 @@ function afficher(message){
 }
 
 v7 = "variable Globale implicitement declaree"; // cree polution dans le contexte globale 
-var v1 = 201.45, v2 = 213555555558845555555555n, v3 = "String", v4 = 20<30, v5 = null, v6;
+var v1 = 201.45, v2 = 213555555558845555555555n, v3 = "String", v4 = 20<30, v5 = null, v6, v9 = function(){}, v10 = Symbol();
 
 function printVar(name, variable){
     console.log('-' + name + " : " + typeof variable + " = " + variable);
@@ -44,6 +51,9 @@ function exp01(){
     printVar("v5", v5);
     printVar("v6", v6);
     printVar("v7", v7);
+    printVar("v9", v9);
+    console.log('v10', typeof v10, v10);
+    if ([] instanceof Array) console.log('[] est une instance de Array'); // on a typeof et instanceOf
 }
 
 // tout ce qu on execute c est on contexte global , nodejs est dans contexte global ; tout ce qui est declaree globale et defenie dans window qui est obj glbale et vice versa
@@ -84,10 +94,21 @@ function exp03(){
 // obj et type primitive : convertir obj en primitive 
 
 function exp04(){
+    console.clear();
     // les valeurs falsy (falcy values)
     let x1 = 0;
     let x2 = "";
     let x3 = false;
+    let x5 = undefined;
+    let x6 = null;
+    let x7 = NaN;
+
+    falsyTruthy('x1', x1);
+    falsyTruthy('x2', x2);
+    falsyTruthy('x3', x3);
+    falsyTruthy('x5', x5);
+    falsyTruthy('x6', x6);
+    falsyTruthy('x7', x7);
 
     printVar('x1', x1);
     printVar('x2', x2);
@@ -98,10 +119,11 @@ function exp04(){
     if(!x2) console.log('x2 = false'); // sont representer par false , ce sont falcy value
     if(x4) console.log('x4 = true');else console.log('x4 == false');//  remonte juste la declaration de x4 et l affectation et reste dans la place ou on a declare le type
 
-    console.log('x1 === x2' , x1 == x2); // comparer representation memoire
-    console.log('x1 === x3' , x1 == x3);
+    console.log('x1 == x2' , x1 == x2); // comparer representation memoire
+    console.log('x1 == x3' , x1 == x3);
 
-    var x4 = []; // tableau vide ,
+    var x4 = []; // tableau vide est thruty , truthy est , var emonte juste la declaration et pas affectation , let il est defenie ou il est declaree , var de block, 
+    falsyTruthy('x4', x4);
     if(x4) console.log('x4 = true');else console.log('x4 == false'); //  les var declares par var remonte juste la declaration de x4 au debut de la fonction et l affectation et reste dans la place ou on a declare le type
     console.log('x1 == x4', x1 == x4); 
 
