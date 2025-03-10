@@ -25,7 +25,7 @@ function afficher(message){
     //alert(message);
     console.log(message); //obj console et sa methode log 
     // que vous avez la possibilite de l exploiter exploiter 
-    //val particuler d obj est null
+    // val particuler d obj est null
     // types primitives de java : int, float, double, char((entre cote)), boolean , 
 }
 
@@ -74,7 +74,7 @@ function exp03(){
     printVar('x2', x2); 
     printVar('x3', x3);
     console.log('x1 == x2' , x1 == x2); // true parceque on compare les valeurs
-    console.log('x1 == x3)' , x1 == x3); // true parsque on compare les valeurs
+    console.log('x1 == x3)' , x1 == x3); // true parceque on compare les valeurs
     console.log('x2 == x3)' , x2 == x3); // false parceque on compare les references 
 
     console.log('x1 === x2' , x1 === x2); // false comparaison strict parceque pas de meme type c est false
@@ -126,3 +126,5 @@ function exp05(){
     let x4 = parseFloat(x1) + x2;
     printVar('x4', x4);
 }
+
+//les types de bases de js sont les suivants : number, string, boolean, undefined, null, symbol
