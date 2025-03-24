@@ -85,6 +85,8 @@ Objects.exp03 = function(){
         console.log('p1.' + key + ' =' +p1[key]);
     }
 }
+
+
 Objects.exp04 = function(){
     let t1 = [];
     let a1 = {};
@@ -94,7 +96,6 @@ Objects.exp04 = function(){
 
     t1[0] = 20;
     a1[0] = 20;
-
 
     console.log('t1.length : ' + t1.length);
     console.log('a1.length : ' + a1.length);
@@ -138,7 +139,8 @@ Objects.exp06 = function() {
     let p2 = Object.create(p1);
     p2.x = 0; // on a cree x pas remontee a p1
     // le prototypede p1 c est un prototype objet de type object c est l heritage prototypage 3 obj chacun herite de la autre . on a cree p2 par create..  on a rien mis dans le il herite de p1 il y a accee en lecture et accee en ecriture  
-    p1.x = 0; 
+    //p1.x = 0; 
+    p2.name = 'p2';
 
     console.log('p2 =' +p2); //la concatenation pour utiliser toString
     console.log('p1 =' +p1); //la concatenation pour utiliser toString
@@ -147,4 +149,20 @@ Objects.exp06 = function() {
     console.log('p1 :' ,p1);  //on a les afficher comme objet
 
     console.log('p2.x :', p2.x);//ila mal9ahach kimchi i9lb liha f p1 le pere un objet de type object
+    Object.prototype.id = 200;
+
+
+    let pp2 = Object.getPrototypeOf(p2);
+    console.log('Prototype de p2', pp2);
+
+    let ppp2 =  Object.getPrototypeOf(pp2);
+    console.log('Prototype de pp2', ppp2);
+
+    let pppp2 =  Object.getPrototypeOf(ppp2);
+    console.log('Prototype de pp2', ppp2);
+
+   
 }
+
+
+//new t :cree obj t depuis un obj t.prototype
