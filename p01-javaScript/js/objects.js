@@ -166,3 +166,121 @@ Objects.exp06 = function() {
 
 
 //new t :cree obj t depuis un obj t.prototype
+
+//objectPrototype : le pere des prototype
+
+
+
+Objects.exp07 = function() {
+    console.clear();
+    //creer le type point  : this en javascript est neccessite 
+    function Point(x = 0, y = 0){
+        this.x = x;
+        this.y = y;
+
+    }
+
+    Point.prototype.toString = function(){
+        return 'Point(' + this.name + ',' + this.x + ',' + this.y + ')';
+    }
+
+    Point.prototype.print = function(){
+            console.log('Point : ' +this.x + ',' + this.y);
+    }
+
+    Point.prototype.name = 'Un Point';
+    Point.MAX_X = 1000; // accessible que par le type .prototype : commun avec tous les objects (il est pas definit sur l objet p1)
+        
+    let p1 = new Point(10, 20);
+        /*
+            let p1 = Object.create(POint.prototype);
+            + Appel a Point() sur p1 => this dans POint correspond a p1
+            clonner ..prototype apple this avec l objet courant
+        */
+    console.log('p1 = ' + p1);
+    console.log('p1 :', p1);
+    
+    let p2 = new Point(24);
+    p2.print();
+
+    console.log(Point.MAX_X); 
+        //console.log(p1.MAX_X); // pas accessible par l instance de point
+
+//il y a possiblite de faire new Function -- gestion des args (passee  a la fct f)
+// let x = new f(); : toutes les fct joue le role d un connstructeur
+// prorotype pour etre prepare de fonctionner comme un type
+// toString pas statique il est commune heritee
+
+// par defaut tout est publique
+}
+
+
+Objects.exp08 = function() {
+    console.clear();
+    // Classes ES6 : equivalent function constructeur
+    class Point {
+        #name = 'Point'; // private
+        static MAX_X = 1000; // static : accessible par le type Point.MAX_X
+
+
+        constructor(x=0, y=0){
+            this.x = x;
+            this.y = y;
+        }
+
+        toString(){
+            return 'Point(' + this.x + ',' + this.y + ')';
+        }
+
+        print(){
+            console.log('Point : ' + this.x + ',' + this.y);
+        }
+
+        get name(){
+            console.log('getter()');
+            return this.#name;
+        }
+
+        set name(value){
+            console.log('setter()');
+            this.#name = value;
+        }
+
+        static info() {
+            console.log('type Point avec MAX_X =' + Point.MAX_X);
+        }
+
+    } 
+
+    let p1 = new Point(20, 30);
+    console.log('p1 = ' + p1);
+    console.log('p1 : ' , p1);
+    p1.print();
+
+    p1.name ='P1';
+
+    console.log('p1.name :' + p1.name);
+    Point.info();
+
+
+    class City extends Point {
+        constructor(name, x, y){
+            super(x, y); // impicite dans java mais dans js explicite et important
+            this.name = name;
+
+        }
+
+        print() {
+            console.log('Ville de ' + this.name + '(' +this.x + ',' + this.y + ')' );
+        }
+    } 
+    let c = new City('Fés', 20000, 30000);
+    c.print();
+}
+
+// vous avez la possibilite de definir  des methode statiques
+// this.x : public
+
+//dériere il y a tjr heritage prototypale : la chaine prototypale
+
+// les notions modules et packages
